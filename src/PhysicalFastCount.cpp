@@ -160,11 +160,11 @@ std::shared_ptr< Array> execute(std::vector< std::shared_ptr< Array> >& inputArr
 
 	while(!inputIterator-> end())
 	{
+		count += inputIterator->getChunk().count();
 
-		std::shared_ptr<ConstChunkIterator> inputChunkIterator = inputIterator->getChunk().getConstIterator();
-
-		ConstChunk const& chunk = inputChunkIterator->getChunk();
-		count+= chunk.count();
+		//std::shared_ptr<ConstChunkIterator> inputChunkIterator = inputIterator->getChunk().getConstIterator();
+		//ConstChunk const& chunk = inputChunkIterator->getChunk();
+		//count+= chunk.count();
 
 		++(*inputIterator);
 	}
